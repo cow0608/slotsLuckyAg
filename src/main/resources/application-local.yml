@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    druid:
+      partner-web:
+        url: jdbc:mysql://localhost:3306/av_yf_ag?rewriteBatchedStatements=true&characterEncoding=UTF-8
+        username: TESTBUILD
+        password: 1qaz@WSX
+
+        #Spring Boot 默认是不注入这些属性值的，需要自己绑定
+        #druid 数据源专有配置
+        # 初始化大小，最小，最大
+        initial-size: 5
+        max-active: 10
+        # 配置获取连接等待超时的时间
+        max-wait: 60000
+        min-idle: 10
+        default-auto-commit: false
+  web:
+    resources:
+      static-locations:
+        - classpath:/resources/
+        - classpath:/static/
+        - classpath:/public/
+
+alliance:
+  slot-lucky:
+    platform-cfg: #平台設定
+      slotLuckyPlatformIp: 127.0.0.1
+      slotLuckyPlatformPort: 4533
+      platformPassword: siteRegister

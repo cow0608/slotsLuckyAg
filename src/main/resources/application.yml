@@ -1,0 +1,40 @@
+spring:
+  profiles:
+    active: 'local'
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+    servlet:
+      path: /slotsluckyAgApi
+
+  datasource:
+    druid:
+      filter:
+        stat:
+          enabled: true
+          db-type: mysql
+          log-slow-sql: true
+          slow-sql-millis: 2000
+        wall:
+          db-type: mysql
+          config:
+            drop-table-allow: false
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQLInnoDBDialect
+      hibernate.cache.use_query_cache: false
+      hibernate.cache.use_second_level_cache: false
+      hibernate.cache.use_structured_entries: false
+      hibernate.cache.use_minimal_puts: false
+      hibernate.order_updates: true #Batch Update
+      hibernate.batch_versioned_data: true #Batch Update
+    open-in-view: false
+
+    springdoc:
+      swagger-ui:
+        path: /swagger-ui.html
+        operationsSorter: method
+        enabled: true
