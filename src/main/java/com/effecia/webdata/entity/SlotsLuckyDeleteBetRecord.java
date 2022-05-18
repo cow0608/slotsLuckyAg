@@ -18,14 +18,14 @@ public class SlotsLuckyDeleteBetRecord implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="delete_id")
+    @Column(name = "delete_id")
     private int deleteId;
 
     @Temporal(TemporalType.DATE)
-    @Column(name="report_date")
+    @Column(name = "report_date")
     private Date reportDate;
 
     public SlotsLuckyDeleteBetRecord() {
@@ -54,4 +54,5 @@ public class SlotsLuckyDeleteBetRecord implements Serializable {
     public void setReportDate(Date reportDate) {
         this.reportDate = reportDate;
     }
+}
 
